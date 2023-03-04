@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=os.getenv('POSTGRES_DB')          
+      - POSTGRES_USER=os.getenv('POSTGRES_USER')       
+      - POSTGRES_PASSWORD=os.getenv('POSTGRES_PASSWORD')  
+    networks:
+      - jarvis-net
+
+  
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/jarvis
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=os.getenv('POSTGRES_DB')
+      - POSTGRES_USER=os.getenv('POSTGRES_USER')
+      - POSTGRES_PASSWORD=os.getenv('POSTGRES_PASSWORD')  
+    networks:
+      - jarvis-net
+    depends_on:
+      - db
+  nginx:
+    build: ./nginx
+    volumes:
+      - staticfiles:/staticfiles
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+    networks:
+      - jarvis-net
+
+networks:
+  jarvis-net:
+    driver: bridge
+
+volumes:
+  staticfiles:
