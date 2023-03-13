@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+        tienda-api
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="cristian lopez">
+    <meta name="description" content="api que permite obtebtener datos ficticios de clientes proveedores y productos.">
+    <link rel="canonical" href="*">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Pixel CSS -->
+    <link type="text/css" href="/static/assets/css/pixel.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    {% include 'includes/navigation.html' %}
+    
+    <main>
+        
+        {% include 'includes/preloader.html' %}
+        
+        <!-- seccion titulo  -->
+        <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="fw-bolder display-2">
+                            TIENDA-API
+                        </h1>
+                        <h2 class="lead fw-normal text-muted mb-4 px-lg-10">
+                            api para manejo de datos ficticios de clientes proveedores y productos.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+             <!-- card de usuario -->
+            <h2 class="col-12 text-center">
+                Ejemplo de manejo de un usuario.
+            </h2>
+            <div class="mx-auto" style="width: 400px;">
+                <div>
+                    <div class="card overflow-hidden">
+                        <div class="position-relative">
+                            <img src="{{x.image}}" class="card-img-top" alt="image">
+                        </div>
+                         <div class="card-body position-relative mt-n6 mx-2 bg-white text-center rounded border border-light">
+                            <span class="text-gray"><i class="fas fa-map-marker-alt mr-2"></i>{{x.address}}</span><br>
+                            <span class="text-gray"><i class="far fa-user"></i>{{x.first_name}} {{x.last_name}}</span><br>
+                            <span class="text-gray"><i class="fa fa-phone-square" aria-hidden="true"></i>{{x.phone}}</span><br>
+                            <p class="mt-3">Neil drives the technical strategy of the platform and brand.</p>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-icon">
+                            <span class="mr-1"><i class="far fa-user"></i></span>{{x.mail}}</button>
+                            <button class="btn btn-primary"><i class="far fa-envelope"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+        </section>
+
+        
+
+        <!-- texto de documentacion -->
+        <div class="col-12 text-center">
+            <h2 class="fw-bolder display-2">
+                How to use
+            </h2>
+            <h3 class="lead fw-normal text-muted mb-4 px-lg-10">
+                You can use AJAX to call the TIENDA API and will receive a dic generated user in return.<br>
+                If you are using jQuery, you can use the $.ajax() function in the code snippet below to get started..
+            </h3>
+        </div>
+        <!-- codepen iframe -->
+        <div class="mx-auto" style="width: 600px;">
+            <p class="codepen" data-height="300" data-default-tab="js" data-slug-hash="qBxVWrp" data-user="cristianl0pez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/cristianl0pez/pen/qBxVWrp">
+                    api bootcamp</a> by Cristian López (<a href="https://codepen.io/cristianl0pez">@cristianl0pez</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+
+        <div class="col-12 text-center">
+            <h2 class="fw-bolder display-2">
+                Results
+            </h2>
+            <h3 class="lead fw-normal text-muted mb-4 px-lg-10">
+                The application will provide you with a JSON, XML, CSV, or YAML object that you can parse and apply to your application. <br>
+
+You can specify the format you want the results in using the format parameter.
+            </h3>
+        </div><br><br>
+        
+        <!-- codepen iframe -->
+        <div class="mx-auto" style="width: 600px;">
+            <p class="codepen" data-height="600" data-theme-id="dark" data-default-tab="js" data-slug-hash="dydZegv" data-user="cristianl0pez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 5em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/cristianl0pez/pen/dydZegv">
+                api bootcamp 2</a> by Cristian López (<a href="https://codepen.io/cristianl0pez">@cristianl0pez</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+                
+                
+    
+                
+     
+         
+                
+         
+           
+
+
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    {% include 'includes/scripts.html' %}
+
+</body>
+
+</html>

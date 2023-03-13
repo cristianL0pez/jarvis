@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Cards {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<main>
+
+    {% include 'includes/preloader.html' %}
+
+    <!-- Hero -->
+    <div class="section-header pb-6 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                    <h1 class="display-3 mb-4">Lista de productos</h1>
+                    <p class="lead mb-5">Endpoint que permite consultar los productos registrados en la aplicación.</p>
+                    <div class="alert bg-secondary align-items-center" role="alert">
+                        <span class="fas fa-info-circle"></span>
+                        <a class="fw-bold text-white text-underline ms-1" href="*" target="_blank">See our
+                            Documentation</a> for a detailed technical explanation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product component-->
+    <div class="container mx-auto">
+        <div class="row">
+            {% for p in products %}
+            <div class="col-12 col-sm-3">
+                <!-- card -->
+                <div class="card border-light h-100 mx-auto">
+                    <img src="{{p.image}}" class="my-auto" alt="product-image">
+                    <div class="card-footer border-top border-light p-4">
+                        <a href="#" class="h5 text-center">{{p.name}}</a>
+                        <div class="mt-2">${{p.price}}</div>
+                    </div>
+                </div>
+                <!-- / card -->              
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    
+
+
+
+</main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
