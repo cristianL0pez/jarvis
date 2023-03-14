@@ -18,7 +18,7 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/jarvis
-      - staticfiles:/staticfiles
+      - ./staticfiles:/staticfiles
     env_file:
       - .env
     ports:
