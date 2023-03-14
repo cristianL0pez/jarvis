@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+section {
+	background-color: #1d0e2e;
+	font-family: "Open Sans", sans-serif;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.card-wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5625em;
+}
+
+.card {
+	background-color: #241839;
+	color: #7f7496;
+	border-radius: 0.3125em;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+	padding: 1.25em 1.5625em;
+	text-align: center;
+}
+
+.card img {
+	border-radius: 50%;
+	border: 0.3125em solid #1d0e2e;
+	width: 50%;
+}
+
+.card h1 {
+	font-size: 1rem;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.card p {
+	margin-top: auto;
+	font-size: 0.8rem;
+	margin-bottom: 3.4375em;
+}
+
+input[type="button"] {
+	background-color: #241839;
+	color: #7f7496;
+	border: 2px solid #1d0e2e;
+	border-radius: 3.125em;
+	padding: 0.625em 3.125em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+@media (max-width: 640px) {
+	body {
+		padding: 8rem 0;
+	}
+
+	.card-wrapper {
+		grid-template-columns: 1fr;
+	}
+}
