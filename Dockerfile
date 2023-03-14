@@ -1,21 +1,16 @@
-# Define la imagen base
-FROM python:3.9-alpine
+FROM python:3.9
 
-# Establece la variable de entorno PYTHONUNBUFFERED en 1
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# 
+WORKDIR /code
 
-RUN pip install --upgrade pip
+# 
+COPY ./requirements.txt /code/requirements.txt
 
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+# 
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
+# 
+COPY ./app /code/app
 
-
-WORKDIR /jarvis
-COPY ./ /jarvis
-
-
-
-COPY ./entrypoint.sh /
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+# 
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
