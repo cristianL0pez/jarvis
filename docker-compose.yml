@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  redis:
+    image: redis
+    networks:
+    - deployml_network
+  fast_api_gpt:
+    image: fast_api_gpt
+    ports:
+    - "80:80"
+    volumes:
+      - ./app:/jarvis/app
+    networks:
+    - deployml_network
+    depends_on:
+    - redis
+    env_file:
+    - .env
+networks:
+    deployml_network:

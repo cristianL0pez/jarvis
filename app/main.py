@@ -1,15 +1,14 @@
-from typing import Union
-
+import redis
 from fastapi import FastAPI
 
 app = FastAPI()
 
+redis_client = redis.Redis(host='redis', port=6379, db=0)
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+async def read_root():
+    redis_client.set('mykey', 'Hello Redis!')
+    return {"mensaje": redis_client.get('mykey').decode('utf-8')}
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+
