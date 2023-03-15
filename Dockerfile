@@ -3,6 +3,7 @@ FROM python:3.9
 # 
 WORKDIR /jarvis
 
+ENV PYTHONPATH=/jarvis/connections
 # 
 COPY ./requirements.txt /jarvis/requirements.txt
 
