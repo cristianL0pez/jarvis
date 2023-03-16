@@ -64,4 +64,4 @@ def authenticate_user(token: str):
 
 # Decorador de autorización
 def require_payment(user: User = Depends(authenticate_user)):
-    if not user.is
+    pass
