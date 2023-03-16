@@ -1,4 +1,3 @@
-import redis
 from connections.openia_conn import get_openai_api_key 
 from connections.redis_conn import redis_client 
 from fastapi import FastAPI, Form
